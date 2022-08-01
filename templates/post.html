@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>{% block title %} {{ post['title'] }} {% endblock %}</h2>
+<span class="badge badge-primary">{{ post['created'] }}</span>
+<p>{{ post['content'] }}</p>
+
+
+<hr>
+<div class="btn-toolbar">
+    <div class="btn-group mr-2">
+        <a href="{{ url_for('edit', id=post['id']) }}">
+            <button class="btn btn-primary btn-sm">Editar</button>
+        </a>
+    </div>
+    <div class="btn-group mr-2">
+        <form action="{{ url_for('delete', id=post['id']) }}" method="POST">
+            <input type="submit" value="Eliminar post" class="btn btn-danger btn-sm" onclick="return confirm('¿Seguro?')">
+        </form>
+    </div>
+
+   
+</div>
+
+
+
+{% endblock %}
