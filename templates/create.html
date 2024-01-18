@@ -4,19 +4,19 @@
 <h1>{% block title %} Agregar nueva entrada {% endblock %}</h1>
 
 <form method="post">
-    <div class="form-group">
+    <div class="form-group mt-4">
         <label for="title">Título</label>
         <input type="text" name="title"
                placeholder="Título" class="form-control"
                value="{{ request.form['title'] }}"></input>
     </div>
 
-    <div class="form-group">
+    <div class="form-group mt-4">
         <label for="content">Contenido</label>
         <textarea name="content" rows="10" placeholder="Contenido"
                   class="form-control">{{ request.form['content'] }}</textarea>
     </div>
-    <div class="form-group">
+    <div class="form-group mt-4">
         <button type="submit" class="btn btn-primary">Agregar</button>
     </div>
 </form>
